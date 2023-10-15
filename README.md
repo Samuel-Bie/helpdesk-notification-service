@@ -6,7 +6,7 @@ This application has been developed in a WSL environment.
 
 ## Purpose
 
-The purpose of this service is to send notifications to the users.
+The purpose of this service is to send notifications to the users (simulation).
 
 All notifications will be processed by rabbitmq, all the setup necessary for this app will be on .env.example
 
@@ -46,8 +46,10 @@ Sail uses Docker to run the development environment. To start the Docker contain
 
 ```
 
-### Migrate and seed:
-The database will come with basic data
+After running this command the app be available on the port 1000. (Assuming that the configuration is the same as provide on the .env.example)
+
+### Running the queue worker
+
 
 ```bash
 ./vendor/bin/sail artisan queue:work
