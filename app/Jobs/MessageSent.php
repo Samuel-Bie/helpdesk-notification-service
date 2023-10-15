@@ -34,6 +34,7 @@ class MessageSent implements ShouldQueue
     {
     	if ($this->data) {
 
+            $data = json_decode($this->data, true, 512, JSON_UNESCAPED_UNICODE);
             /**
              * Here we would add a message sent notification
              * via email ou push using laravel ECHO or anything else
@@ -42,7 +43,7 @@ class MessageSent implements ShouldQueue
              * But for this particular case we'll just log the information on the logs file
             */
 
-            Log::info($this->data);
+            Log::info($data);
         }
     }
 }
