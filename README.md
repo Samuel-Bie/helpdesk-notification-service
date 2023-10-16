@@ -1,62 +1,47 @@
 
-# About HelpDesk Notification Service
-First of all thank you for giving me this opportunity, means a lot to me.
+**Notification service installation**
 
-This application has been developed in a WSL environment.
+  
 
-## Purpose
+**1. **Clone on github****
 
-The purpose of this service is to send notifications to the users (simulation).
+```sh
 
-All notifications will be processed by rabbitmq, all the setup necessary for this app will be on .env.example
-
-For this app it only process MessageSent Job, and it only logs the data received from rabbitmq.
-
-## Prerequisites
-
-Make sure you have PHP, Composer, and Docker installed on your computer. Sail uses Docker to set up the development environment.
-
-Ensure you have Git installed for version control (optional but recommended).
-
-## Configuration
-This application comes with Laravel Sail inside. So after successfully clone the app
-
-### Database Configuration
-
-No database configuration needed
-
-### Install all dependencies
-
-
-```bash
-
-composer install
+git  clone  https://github.com/Samuel-Bie/helpdesk-notification-service.git
 
 ```
 
+  
 
-### Start Docker Containers:
+**2. **Install the dependencies****
 
-Sail uses Docker to run the development environment. To start the Docker containers, run the following command:
-
+  
 
 ```bash
 
-./vendor/bin/sail up
+composer  install
 
 ```
 
-After running this command the app be available on the port 1000. (Assuming that the configuration is the same as provide on the .env.example)
+**3. Configure  the queue driver**
 
-### Running the queue worker
+To easy this process just copy the *.env.example* file to *.env*
 
+  
+
+**4. Spin up the containers**
 
 ```bash
-./vendor/bin/sail artisan queue:work
+
+./vendor/bin/sail  up
 
 ```
+ After running this command the app be available on the port 1000. (Assuming that the configuration is the same as provide on the .env.example)
 
-# Recommendation
+**5. Run the queue worker**
 
-If any issue arises, please do not hesitate to contact me for clarifications
+```bash
 
+./vendor/bin/sail  artisan  queue:work
+
+```
